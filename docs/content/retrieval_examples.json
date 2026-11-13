@@ -1,11 +1,11 @@
 {
   "generated_by": "website/tools/prepare_retrieval_examples.py",
   "checkpoint": {
-    "description": "original main-result checkpoint (original split)",
+    "description": "CoLITE-CLIP main-result checkpoint",
     "sha256": "b702d7eb1017771ed3aa67120cbed39d5900fa6192da3244b469ea57680977b8"
   },
   "gallery": {
-    "split": "original test split",
+    "split": "X-STAR test split",
     "size": 1289,
     "split_list_sha256": "125cf37abc8897db8e4da030ea18c7a5dd1225e88556ca84c318bfca7c503c36"
   },
@@ -19,12 +19,12 @@
   "selection_note": "Five illustrative examples: four rank-1 successes and one rank-2 retrieval; not a representative performance estimate.",
   "ranking_sources": [
     {
-      "file": "verified_rankings_original.json",
-      "sha256": "a4d39cf24f60aeccbb686a252a4ae8070593d02d76a95409bbaef38c5999f119"
+      "sha256": "a4d39cf24f60aeccbb686a252a4ae8070593d02d76a95409bbaef38c5999f119",
+      "role": "main retrieval verification"
     },
     {
-      "file": "verified_rankings_chinese_additional.json",
-      "sha256": "7e4580302a5f9f74b5168310d1d7d70e7d9664d7eed36dc2845678e5ba23f0ef"
+      "sha256": "7e4580302a5f9f74b5168310d1d7d70e7d9664d7eed36dc2845678e5ba23f0ef",
+      "role": "Chinese-query retrieval verification"
     }
   ],
   "figure_data_sha256": "3124de437ca8402f6c04a512bb6ae338fbe8f8ff6d8bbb23ccef2c7933a5ad07",

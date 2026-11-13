@@ -104,7 +104,7 @@ python scripts/export_inference_checkpoint.py --input /path/to/best.pt \
     --output runs/inference_checkpoints/my_model__inference.pt
 ```
 
-See [dataset integrity](dataset_integrity.md) for original-split overlap and tie handling.
+See [dataset integrity](dataset_integrity.md) for benchmark overlap and tie handling.
 
 Tests: `pytest`. Setting `XSTAR_RESEARCH_ROOT` to a local copy of the research
 storage also runs the checks against the real checkpoint and features. Tests

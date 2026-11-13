@@ -1,6 +1,6 @@
 # benchmark integrity
 
-The released results use the original, fixed X-STAR split: 4,515 training, 645 validation and 1,289 test records. Record IDs and filenames are disjoint across splits; image contents are not fully disjoint.
+The released results use the fixed X-STAR split: 4,515 training, 645 validation and 1,289 test records. Record IDs and filenames are disjoint across splits; image contents are not fully disjoint.
 
 A byte-level audit of all 6,449 image files found 61 identical-image pairs: 34 within training, two within test, and 25 across splits. Fifteen test images and eight validation images match a training image; two additional pairs span validation and test. No record assignments were changed for the reported benchmark. This overlap is a limitation; its effect on the reported results has not been measured.
 

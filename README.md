@@ -64,6 +64,8 @@ Code is [MIT licensed](LICENSE), and the released weights use [MIT](MODEL_LICENS
 
 ## Acknowledgements
 
+We thank [AI4Bharat](https://ai4bharat.iitm.ac.in/) for [IndicTrans2](https://github.com/AI4Bharat/IndicTrans2), used for Indic-language translation during dataset preparation.
+
 We acknowledge the **National Language Translation Mission ([Bhashini](https://bhashini.gov.in/))** for supporting this project at Indian Institute of Technology Jodhpur.
 
 Built on [Bharat Scene Text Dataset](https://github.com/Bhashini-IITJ/BharatSceneTextDataset), [RCTW-17](https://rctw.vlrlab.net/), [IndicPhotoOCR](https://github.com/Bhashini-IITJ/IndicPhotoOCR), [OpenAI CLIP](https://github.com/openai/CLIP) and the [ColBERT](https://github.com/stanford-futuredata/ColBERT) late-interaction design; pre-trained on [TextCaps](https://textvqa.org/textcaps/).

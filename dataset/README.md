@@ -50,6 +50,8 @@ layout; BSTD folders H and M are excluded. Folder N holds the Chinese images.
 
 ## Query languages and fields
 
+Indic-language translation during dataset preparation uses [AI4Bharat IndicTrans2](https://github.com/AI4Bharat/IndicTrans2). The released pipeline consumes the supplied translations.
+
 Each manifest record carries 13 query-language fields and 12 back-translated
 fields:
 
