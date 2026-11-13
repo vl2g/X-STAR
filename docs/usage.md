@@ -9,7 +9,7 @@ Python 3.10 or newer. Inside a virtual environment:
 ```bash
 pip install -e .                                        # numpy, torch, pyyaml
 pip install -e ".[features]"                            # pillow, ftfy, regex (feature extraction)
-pip install "git+https://github.com/openai/CLIP.git"    # original OpenAI CLIP (feature extraction, text queries)
+pip install "git+https://github.com/openai/CLIP.git"    # OpenAI CLIP (feature extraction, text queries)
 pip install -e ".[test]"                                # pytest
 ```
 
@@ -76,11 +76,11 @@ python scripts/train.py --config configs/xstar_finetune.yaml --paths configs/pat
     --output-dir runs/xstar_finetune --device cuda:0
 
 # Extract features for one split from the manifest and images.
-python scripts/extract_image_features.py --manifest /path/to/XSTAR_final_manifest2.json \
+python scripts/extract_image_features.py --manifest /path/to/xstar_annotations/xstar_annotations.json \
     --image-root /path/to/XSTAR_dataset --split test --global --output-dir features/images_test
-python scripts/extract_query_features.py --manifest /path/to/XSTAR_final_manifest2.json \
+python scripts/extract_query_features.py --manifest /path/to/xstar_annotations/xstar_annotations.json \
     --split test --output-root features/queries_test
-python scripts/extract_ocr_features.py --manifest /path/to/XSTAR_final_manifest2.json \
+python scripts/extract_ocr_features.py --manifest /path/to/xstar_annotations/xstar_annotations.json \
     --split test --output-dir features/ocr_test_vitb32_lines
 ```
 
@@ -100,7 +100,7 @@ Commands and verification: [`inference_checkpoints.md`](inference_checkpoints.md
 
 ```bash
 python scripts/export_inference_checkpoint.py --input /path/to/best.pt \
-    --experiment my_experiment --split original --tau-mode stored_parameter \
+    --experiment my_experiment --split --tau-mode stored_parameter \
     --output runs/inference_checkpoints/my_model__inference.pt
 ```
 

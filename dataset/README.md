@@ -1,10 +1,6 @@
 # X-STAR dataset card
 
-> **Status:** the manifest, split lists and feature files are not yet
-> distributed from this repository, and no download location has been
-> decided. Source images must be obtained from their original providers (see
-> [Source images](#source-images)); a preparation script and the Chinese subset
-> mapping are included.
+> **Download:** [xstar_annotations.zip](https://github.com/vl2g/X-STAR/releases/download/v0.1.0/xstar_annotations.zip) — multilingual queries, English OCR lines, split lists and provenance. Our contributions use [CC BY-SA 4.0](LICENSE-ANNOTATIONS.txt); retain the [source notice](SOURCE_NOTICE.md). Images and feature caches are separate.
 
 ## Task
 
@@ -104,7 +100,7 @@ Recognized OCR and ground-truth OCR must never be mixed in one experiment.
 the model's learned null OCR token.
 
 For the 5,949 BSTD images, the recovered merged translated-OCR artifact from
-the original OCR run agrees with `ocr_lines_en` for every record after
+the OCR run agrees with `ocr_lines_en` for every record after
 whitespace collapsing and removal of empty lines (5,820 records are identical
 before that normalization; 129 differ only in whitespace or empty lines).
 
@@ -128,7 +124,7 @@ X-STAR folder layout.
 ### RCTW-17 (folder N; 500 images)
 
 - Provider: [RCTW-17](https://rctw.vlrlab.net/) (Reading Chinese Text in the
-  Wild). No formal named license is specified; reported original-author reuse permission is described in [licensing](../docs/licensing.md).
+  Wild). No formal named license is specified; reported dataset-author reuse permission is described in [licensing](../docs/licensing.md).
 - Exact mapping: `N/image_<k>.jpg` ← RCTW-17 `raw/train_images/image_<k>.jpg`
   (identical file name, taken from the RCTW-17 training images).
 - Verification status: all 500 X-STAR Chinese images match their RCTW-17
@@ -147,26 +143,26 @@ the 500 Chinese images by SHA-256.
 
 ```bash
 # Report what would be done; write nothing.
-python scripts/prepare_dataset.py --manifest /path/to/XSTAR_final_manifest2.json \
+python scripts/prepare_dataset.py --manifest /path/to/xstar_annotations/xstar_annotations.json \
     --bstd-root /path/to/BharatSceneText/detection --rctw-root /path/to/RCTW-17 \
     --output-root /path/to/XSTAR_dataset --dry-run
 # Copy (or --link symlink/hardlink) the images, then check an existing layout.
-python scripts/prepare_dataset.py --manifest /path/to/XSTAR_final_manifest2.json \
+python scripts/prepare_dataset.py --manifest /path/to/xstar_annotations/xstar_annotations.json \
     --bstd-root /path/to/BharatSceneText/detection --rctw-root /path/to/RCTW-17 \
     --output-root /path/to/XSTAR_dataset
-python scripts/prepare_dataset.py --manifest /path/to/XSTAR_final_manifest2.json \
+python scripts/prepare_dataset.py --manifest /path/to/xstar_annotations/xstar_annotations.json \
     --bstd-root /path/to/BharatSceneText/detection --rctw-root /path/to/RCTW-17 \
     --output-root /path/to/XSTAR_dataset --verify-only
 ```
 
-The manifest itself is not yet distributed from this repository. Each split
+The portable manifest is `xstar_annotations/xstar_annotations.json`, with ordered lists in `xstar_annotations/splits/`. Server paths were removed without changing text, IDs or split membership; [provenance](annotation_release.json) records both file hashes. Each split
 list equals the sorted filenames of that split in the manifest;
 [`scripts/validate_dataset.py`](../scripts/validate_dataset.py) checks a layout
 and, with `--check-features`, its cached features.
 
 ## Feature files
 
-Feature extraction scripts write the same file layout as the original cache
+Feature extraction scripts write the same file layout as the cache
 (see [`configs/paths.example.yaml`](../configs/paths.example.yaml)). OCR line
 embeddings written by
 [`scripts/extract_ocr_features.py`](../scripts/extract_ocr_features.py) use the
@@ -178,12 +174,21 @@ pickle-free `xstar-ocr-lines-v1` format, one `<image_id>.npz` per image:
 | `lines` | Unicode `[L]`, the encoded line strings in order (whitespace-collapsed, empty lines dropped) |
 | `format` | the string `xstar-ocr-lines-v1` |
 
-Images without OCR lines have `L = 0`. The original cache files store `E`,
+Images without OCR lines have `L = 0`. The cache files store `E`,
 pickled `tokens` and `scores`; the package reads their `E` without unpickling.
 
 ## Licensing
 
 No single license covers X-STAR. Source images remain under the terms of BSTD
-and RCTW-17 respectively. The licensing of X-STAR's own annotations (queries,
-translations, split files, mappings) and of the released features and
-checkpoints is undecided.
+and RCTW-17 respectively. Our annotation contributions use CC BY-SA 4.0. Released model weights use MIT. Source material retains its terms; feature-cache release terms are unspecified.
+
+## Download and configure
+
+```bash
+curl -L --fail -o xstar_annotations.zip https://github.com/vl2g/X-STAR/releases/download/v0.1.0/xstar_annotations.zip
+unzip xstar_annotations.zip
+curl -L --fail -o colite_clip_xstar.pt https://github.com/vl2g/X-STAR/releases/download/v0.1.0/colite_clip_xstar.pt
+cp configs/paths.example.yaml configs/paths.yaml
+```
+
+Set `dataset.manifest` to `xstar_annotations/xstar_annotations.json`, `dataset.split_lists` to the extracted `splits/` files, and `checkpoints.xstar_main` to `colite_clip_xstar.pt`. Set image and feature roots separately. Verify the downloads with the release checksums.

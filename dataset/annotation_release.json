@@ -1,0 +1,27 @@
+{
+  "release": "v0.1.0",
+  "annotation_license": "CC-BY-SA-4.0",
+  "source_manifest_sha256": "f6e594ac5d0eb470c5ff32bbc4637c5831c1cf2727e9227e2f023cde457d26a2",
+  "released_manifest_sha256": "ebb66da74e26f25a83347dddb969a0eb5b0f5695de4fbf5ad51413c3d21ce980",
+  "records": 6449,
+  "split_counts": {
+    "test": 1289,
+    "train": 4515,
+    "val": 645
+  },
+  "native_query_sets": 13,
+  "back_translated_query_sets": 12,
+  "changes": [
+    "Removed per-record abs_path and metadata root",
+    "Added license and source-notice metadata",
+    "No query, OCR text, ID, record order or split assignment changed"
+  ],
+  "split_list_sha256": {
+    "image_filenames_test.txt": "125cf37abc8897db8e4da030ea18c7a5dd1225e88556ca84c318bfca7c503c36",
+    "image_filenames_train.txt": "ab32159487ed93251631af4b403f652868c0aaaee7cdd81c2f8511584f09a428",
+    "image_filenames_val.txt": "075742b485efcc854f98b842d7080164ccc787fea663f261220ee322e66df27b"
+  },
+  "download_url": "https://github.com/vl2g/X-STAR/releases/download/v0.1.0/xstar_annotations.zip",
+  "archive_sha256": "b8a63016ee3f6eb7f74710176198fafb836433550abca6f22c7631c51f34cc2f",
+  "archive_bytes": 4214823
+}

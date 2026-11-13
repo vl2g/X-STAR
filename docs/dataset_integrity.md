@@ -1,4 +1,4 @@
-# Original benchmark integrity
+# benchmark integrity
 
 The released results use the original, fixed X-STAR split: 4,515 training, 645 validation and 1,289 test records. Record IDs and filenames are disjoint across splits; image contents are not fully disjoint.
 

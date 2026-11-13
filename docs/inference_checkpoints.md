@@ -7,7 +7,7 @@ The main X-STAR model has two checkpoint forms:
 | Full training checkpoint | about 556 MB | Retains model weights and optimizer state for compatible training continuation |
 | Compact inference checkpoint | about 185 MB | Evaluation, retrieval and initialization of a new training run |
 
-The compact file is `xstar_main_original__inference__src-b702d7eb1017.pt`.
+The compact file is `colite_clip_xstar.pt`.
 SHA-256: `e4e8a9a5ebd6cfc9acbacd553ce0fd5ffe791a8bff33c5839227b83728d56862`.
 The source checkpoint SHA-256 is `b702d7eb1017` (prefix; full identity is in the evaluation report).
 
@@ -21,17 +21,17 @@ The export records code revision `10d0f9b` with a dirty flag from concurrent REA
 
 Keep the full training checkpoints on server storage. Compact exports omit optimizer state and resume metadata, so `train.py --resume` rejects them. `--init-checkpoint` loads their weights into a new run with a fresh optimizer and schedule.
 
-Full checkpoints written by this package's trainer support `--resume` when the original run directory, inputs and settings match. They restore optimizer, epoch, global step, best validation value and random state. Use the latest completed epoch checkpoint to continue the interrupted run; `best.pt` may belong to an earlier epoch.
+Full checkpoints written by this package's trainer support `--resume` when the run directory, inputs and settings match. They restore optimizer, epoch, global step, best validation value and random state. Use the latest completed epoch checkpoint to continue the interrupted run; `best.pt` may belong to an earlier epoch.
 
-The original main checkpoint was produced by the legacy notebook. Its optimizer state can support continuation with compatible notebook training code, but the package's strict `--resume` requires its own run signature and metadata. Do not claim exact continuation from the legacy checkpoint through the new trainer.
+The main checkpoint was produced by the legacy notebook. Its optimizer state can support continuation with compatible notebook training code, but the package's strict `--resume` requires its own run signature and metadata. Do not claim exact continuation from the legacy checkpoint through the new trainer.
 
 ## Downloads and use
 
-Public weight downloads and artifact-specific terms are forthcoming; see [resources](resources.md#checkpoints). No checkpoint binary is included in Git. Local compact exports can be evaluated using:
+Download [`colite_clip_xstar.pt`](https://github.com/vl2g/X-STAR/releases/download/v0.1.0/colite_clip_xstar.pt) under [MIT](../MODEL_LICENSE.txt). Optimizer and random state are omitted; the compact file cannot resume a training run. Checkpoints are release attachments, outside Git history.
 
 ```bash
 python scripts/evaluate.py --paths configs/paths.yaml \
-    --checkpoint /path/to/xstar_main_original__inference__src-b702d7eb1017.pt \
+    --checkpoint /path/to/colite_clip_xstar.pt \
     --output-dir runs/eval_main_inference --experiment-name main_inference --device cuda:0
 ```
 

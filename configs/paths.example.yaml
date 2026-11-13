@@ -8,14 +8,14 @@
 dataset:
   # Folder holding the image folders (A ... L, N); used for image checks.
   root: /path/to/XSTAR_dataset
-  manifest: /path/to/XSTAR_dataset/XSTAR_final_manifest2.json
+  manifest: /path/to/xstar_annotations/xstar_annotations.json
   # Ordered image lists (one relative filename per line). They define the
   # split and the row order of every per-split feature array. For X-STAR each
   # list equals the sorted filenames of that split in the manifest.
   split_lists:
-    train: /path/to/XSTAR_embeddings/image_filenames_train.txt
-    val: /path/to/XSTAR_embeddings/image_filenames_val.txt
-    test: /path/to/XSTAR_embeddings/image_filenames_test.txt
+    train: /path/to/xstar_annotations/splits/image_filenames_train.txt
+    val: /path/to/xstar_annotations/splits/image_filenames_val.txt
+    test: /path/to/xstar_annotations/splits/image_filenames_test.txt
 
 # Precomputed CLIP ViT-B/32 feature cache. Names match the original cache and
 # the outputs of the extraction scripts.
@@ -41,7 +41,7 @@ checkpoints:
   # (Its research directory name contains "k46"; its OCR cap is K = 30.)
   textcaps_init: /path/to/textcap/ROOT2_embeddings/checkpoints_colbert_vitb32_k46_no_distill/best.pt
   # Main X-STAR result checkpoint (epoch 9).
-  xstar_main: /path/to/XSTAR_embeddings/checkpoints_colbert_XSTAR_5/best.pt
+  xstar_main: /path/to/colite_clip_xstar.pt
 
 # TextCaps feature files, needed only for scripts/train.py with
 # configs/textcaps_pretrain.yaml. Preparing these features from raw TextCaps

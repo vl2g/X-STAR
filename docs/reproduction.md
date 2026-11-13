@@ -24,16 +24,16 @@ language results, provenance and checksums are in
 Two pairs of identical test images produce tied scores; ties are ordered by the
 fixed gallery order. Under other tie handling the rounded baseline R@1 or R@10
 could read 24.7 or 51.9 (CoLITE-CLIP is unaffected after rounding); see the
-evaluation report. The original multi-language evaluator contained a
+evaluation report. The multi-language evaluator contained a
 path error that silently replaced the CLIP baseline's global query embeddings
 with averaged token embeddings; `scripts/evaluate.py` refuses to run without the
 intended global features (the main-model evaluator requires the intended global embeddings).
 
 **Dataset integrity.** An audit of image bytes found 61 pairs of identical
-image files in the original split: 15 test and 8 validation images are
+image files in the split: 15 test and 8 validation images are
 identical to a training image, 2 validation/test pairs share an image, and 2
 test images each have an identical copy in the test gallery. The results above
-are for the original split as published; whether the overlap affects them has
+are for the split as published; whether the overlap affects them has
 not been measured. A perceptual-hash screen additionally flags suspected
 near-duplicates (same scene photographed moments apart) across splits; these
 are distinct photographs and remain separate records. See

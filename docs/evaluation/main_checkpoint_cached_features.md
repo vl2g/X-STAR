@@ -111,3 +111,7 @@ training image and 2 to a validation image. Each pair has identical recognized
 OCR lines; their English queries are identical in 4 of the 61 pairs and
 different (generated per record) in the others. The complete byte-level audit in [`../dataset_integrity.md`](../dataset_integrity.md)
 confirms these counts and documents the tie policy. No records were changed, and the effect on the results was not measured.
+
+## Portable annotation download
+
+The release removes server paths without changing record order, queries, OCR text, image IDs or split assignments. Its file hash differs from the historical evaluation input. Both identities and exact changes are recorded in [annotation_release.json](../../dataset/annotation_release.json). The checkpoint bytes and three ordered split lists are unchanged.

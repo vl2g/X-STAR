@@ -608,7 +608,6 @@
     "numpy": "2.2.6",
     "torch": "2.4.1+cu121",
     "cuda_available": true,
-    "executable": "<repo>/.venv/bin/python",
     "clip": "1.0",
     "xstar": "0.1.0.dev0",
     "git": {

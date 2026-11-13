@@ -6,15 +6,15 @@ Paper link and final publication metadata are forthcoming. Authors: **Dikshant S
 
 ## Project page
 
-[Project website](https://dikshant-sharma05.github.io/X-STAR-website/) · [Website source](https://github.com/dikshant-sharma05/X-STAR-website).
+[Project website](https://vl2g.github.io/X-STAR/) · [Website source](https://github.com/vl2g/X-STAR/tree/main/docs).
 
 ## Dataset
 
-X-STAR manifest, split-list and feature download links are forthcoming. Obtain source images from [BSTD](https://github.com/Bhashini-IITJ/BharatSceneTextDataset) and [RCTW-17](https://rctw.vlrlab.net/dataset). See the [dataset card](../dataset/README.md) for preparation and input formats. Source datasets do not replace the X-STAR manifest and cached translations.
+[Download annotations](https://github.com/vl2g/X-STAR/releases/download/v0.1.0/xstar_annotations.zip): 6,449 records with multilingual queries, supplied English OCR lines, fixed split assignments, three ordered split lists, license and provenance. Our contributions are **CC BY-SA 4.0**. Source images and feature caches are separate; see the [dataset card](../dataset/README.md).
 
 ## Checkpoints
 
-Public checkpoint downloads and weight-specific release terms are forthcoming. No checkpoint binary is included in Git. The main model's verified compact inference export is approximately 185 MB; its full training checkpoint is approximately 556 MB and is retained separately for compatible training continuation. See [checkpoint documentation](inference_checkpoints.md).
+[Download CoLITE-CLIP weights](https://github.com/vl2g/X-STAR/releases/download/v0.1.0/colite_clip_xstar.pt) (**185 MB, MIT**). The compact checkpoint preserves the full model weights and retrieval results. The 556 MB training checkpoint remains on storage. See [checkpoint documentation](inference_checkpoints.md) and [checksums](https://github.com/vl2g/X-STAR/releases/download/v0.1.0/SHA256SUMS.txt).
 
 ## Citation
 

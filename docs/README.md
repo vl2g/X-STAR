@@ -10,6 +10,8 @@
 | Compact and resumable checkpoints | [Checkpoints](inference_checkpoints.md) |
 | Artifact availability | [Resources](resources.md) |
 | Licensing and attribution | [Licensing](licensing.md) |
-| Original benchmark overlap and ties | [Dataset integrity](dataset_integrity.md) |
+| benchmark overlap and ties | [Dataset integrity](dataset_integrity.md) |
 
 Research data, feature caches and checkpoints are obtained separately. Local paths belong in `configs/paths.yaml`, which Git ignores.
+
+The project website is served from this folder, including its credited assets and `.nojekyll`. Run `python tools/check_project_page.py` from the repository root to check it.
