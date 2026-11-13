@@ -1,0 +1,665 @@
+{
+  "experiment_name": "main_checkpoint_cached_features",
+  "created_utc": "2026-10-22T11:17:18Z",
+  "command": [
+    "scripts/evaluate.py",
+    "--paths",
+    "configs/paths.yaml",
+    "--checkpoint",
+    "xstar_main",
+    "--output-dir",
+    "runs/main_checkpoint_verified",
+    "--experiment-name",
+    "main_checkpoint_cached_features",
+    "--device",
+    "cuda:0"
+  ],
+  "paths_config": "<repo>/configs/paths.yaml",
+  "complete_benchmark": true,
+  "partial_reasons": [],
+  "split": "test",
+  "gallery_size": 1289,
+  "query_sets": [
+    "english_query",
+    "assamese_to_english",
+    "bengali_to_english",
+    "gujarati_to_english",
+    "hindi_to_english",
+    "kannada_to_english",
+    "malayalam_to_english",
+    "marathi_to_english",
+    "odia_to_english",
+    "punjabi_to_english",
+    "tamil_to_english",
+    "telugu_to_english",
+    "chinese_to_english"
+  ],
+  "queries_evaluated": 16757,
+  "coverage": {
+    "expected_split_ids_from_manifest": 1289,
+    "gallery": {
+      "rows": 1289,
+      "unique_ids": 1289,
+      "expected_ids": 1289,
+      "duplicated_ids": 0,
+      "missing_ids": 0,
+      "extra_ids": 0,
+      "examples": {
+        "duplicated": [],
+        "missing": [],
+        "extra": []
+      },
+      "matches_manifest_split": true,
+      "ordered_ids_sha256": "65ae7c10e01336f85ae6e3a87f5a1c5436c95a5ea980d04d1ed21522bb29d283"
+    },
+    "query_sets": {
+      "english_query": {
+        "rows": 1289,
+        "unique_ids": 1289,
+        "expected_ids": 1289,
+        "duplicated_ids": 0,
+        "missing_ids": 0,
+        "extra_ids": 0,
+        "examples": {
+          "duplicated": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "assamese_to_english": {
+        "rows": 1289,
+        "unique_ids": 1289,
+        "expected_ids": 1289,
+        "duplicated_ids": 0,
+        "missing_ids": 0,
+        "extra_ids": 0,
+        "examples": {
+          "duplicated": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "bengali_to_english": {
+        "rows": 1289,
+        "unique_ids": 1289,
+        "expected_ids": 1289,
+        "duplicated_ids": 0,
+        "missing_ids": 0,
+        "extra_ids": 0,
+        "examples": {
+          "duplicated": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "gujarati_to_english": {
+        "rows": 1289,
+        "unique_ids": 1289,
+        "expected_ids": 1289,
+        "duplicated_ids": 0,
+        "missing_ids": 0,
+        "extra_ids": 0,
+        "examples": {
+          "duplicated": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "hindi_to_english": {
+        "rows": 1289,
+        "unique_ids": 1289,
+        "expected_ids": 1289,
+        "duplicated_ids": 0,
+        "missing_ids": 0,
+        "extra_ids": 0,
+        "examples": {
+          "duplicated": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "kannada_to_english": {
+        "rows": 1289,
+        "unique_ids": 1289,
+        "expected_ids": 1289,
+        "duplicated_ids": 0,
+        "missing_ids": 0,
+        "extra_ids": 0,
+        "examples": {
+          "duplicated": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "malayalam_to_english": {
+        "rows": 1289,
+        "unique_ids": 1289,
+        "expected_ids": 1289,
+        "duplicated_ids": 0,
+        "missing_ids": 0,
+        "extra_ids": 0,
+        "examples": {
+          "duplicated": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "marathi_to_english": {
+        "rows": 1289,
+        "unique_ids": 1289,
+        "expected_ids": 1289,
+        "duplicated_ids": 0,
+        "missing_ids": 0,
+        "extra_ids": 0,
+        "examples": {
+          "duplicated": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "odia_to_english": {
+        "rows": 1289,
+        "unique_ids": 1289,
+        "expected_ids": 1289,
+        "duplicated_ids": 0,
+        "missing_ids": 0,
+        "extra_ids": 0,
+        "examples": {
+          "duplicated": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "punjabi_to_english": {
+        "rows": 1289,
+        "unique_ids": 1289,
+        "expected_ids": 1289,
+        "duplicated_ids": 0,
+        "missing_ids": 0,
+        "extra_ids": 0,
+        "examples": {
+          "duplicated": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "tamil_to_english": {
+        "rows": 1289,
+        "unique_ids": 1289,
+        "expected_ids": 1289,
+        "duplicated_ids": 0,
+        "missing_ids": 0,
+        "extra_ids": 0,
+        "examples": {
+          "duplicated": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "telugu_to_english": {
+        "rows": 1289,
+        "unique_ids": 1289,
+        "expected_ids": 1289,
+        "duplicated_ids": 0,
+        "missing_ids": 0,
+        "extra_ids": 0,
+        "examples": {
+          "duplicated": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "chinese_to_english": {
+        "rows": 1289,
+        "unique_ids": 1289,
+        "expected_ids": 1289,
+        "duplicated_ids": 0,
+        "missing_ids": 0,
+        "extra_ids": 0,
+        "examples": {
+          "duplicated": [],
+          "missing": [],
+          "extra": []
+        }
+      }
+    }
+  },
+  "query_counts": {
+    "english_query": {
+      "queries": 1289,
+      "queries_available": 1289,
+      "language": "english",
+      "colite_tied_queries": 4,
+      "baseline_tied_queries": 4
+    },
+    "assamese_to_english": {
+      "queries": 1289,
+      "queries_available": 1289,
+      "language": "assamese",
+      "colite_tied_queries": 4,
+      "baseline_tied_queries": 4
+    },
+    "bengali_to_english": {
+      "queries": 1289,
+      "queries_available": 1289,
+      "language": "bengali",
+      "colite_tied_queries": 4,
+      "baseline_tied_queries": 4
+    },
+    "gujarati_to_english": {
+      "queries": 1289,
+      "queries_available": 1289,
+      "language": "gujarati",
+      "colite_tied_queries": 4,
+      "baseline_tied_queries": 4
+    },
+    "hindi_to_english": {
+      "queries": 1289,
+      "queries_available": 1289,
+      "language": "hindi",
+      "colite_tied_queries": 4,
+      "baseline_tied_queries": 4
+    },
+    "kannada_to_english": {
+      "queries": 1289,
+      "queries_available": 1289,
+      "language": "kannada",
+      "colite_tied_queries": 4,
+      "baseline_tied_queries": 4
+    },
+    "malayalam_to_english": {
+      "queries": 1289,
+      "queries_available": 1289,
+      "language": "malayalam",
+      "colite_tied_queries": 4,
+      "baseline_tied_queries": 4
+    },
+    "marathi_to_english": {
+      "queries": 1289,
+      "queries_available": 1289,
+      "language": "marathi",
+      "colite_tied_queries": 4,
+      "baseline_tied_queries": 4
+    },
+    "odia_to_english": {
+      "queries": 1289,
+      "queries_available": 1289,
+      "language": "odia",
+      "colite_tied_queries": 4,
+      "baseline_tied_queries": 4
+    },
+    "punjabi_to_english": {
+      "queries": 1289,
+      "queries_available": 1289,
+      "language": "punjabi",
+      "colite_tied_queries": 4,
+      "baseline_tied_queries": 4
+    },
+    "tamil_to_english": {
+      "queries": 1289,
+      "queries_available": 1289,
+      "language": "tamil",
+      "colite_tied_queries": 4,
+      "baseline_tied_queries": 4
+    },
+    "telugu_to_english": {
+      "queries": 1289,
+      "queries_available": 1289,
+      "language": "telugu",
+      "colite_tied_queries": 4,
+      "baseline_tied_queries": 4
+    },
+    "chinese_to_english": {
+      "queries": 1289,
+      "queries_available": 1289,
+      "language": "chinese",
+      "colite_tied_queries": 4,
+      "baseline_tied_queries": 4
+    }
+  },
+  "colite_clip": {
+    "per_query_set": {
+      "english_query": {
+        "R@1": 52.21101629169899,
+        "R@5": 69.27851047323507,
+        "R@10": 75.71761055081458
+      },
+      "assamese_to_english": {
+        "R@1": 44.22032583397983,
+        "R@5": 62.06361520558572,
+        "R@10": 70.13188518231188
+      },
+      "bengali_to_english": {
+        "R@1": 45.07370054305663,
+        "R@5": 65.01163692785104,
+        "R@10": 72.92474786656322
+      },
+      "gujarati_to_english": {
+        "R@1": 47.01318851823119,
+        "R@5": 67.95965865011637,
+        "R@10": 74.55391776570985
+      },
+      "hindi_to_english": {
+        "R@1": 46.78044996121024,
+        "R@5": 66.9511249030256,
+        "R@10": 72.92474786656322
+      },
+      "kannada_to_english": {
+        "R@1": 45.84949573312645,
+        "R@5": 64.70131885182312,
+        "R@10": 72.30411171450737
+      },
+      "malayalam_to_english": {
+        "R@1": 48.95267649340574,
+        "R@5": 67.64934057408844,
+        "R@10": 74.94181536074477
+      },
+      "marathi_to_english": {
+        "R@1": 42.97905352986812,
+        "R@5": 63.53762606671839,
+        "R@10": 70.4422032583398
+      },
+      "odia_to_english": {
+        "R@1": 46.858029480217226,
+        "R@5": 65.70985259891388,
+        "R@10": 73.62296353762606
+      },
+      "punjabi_to_english": {
+        "R@1": 46.39255236617533,
+        "R@5": 66.17532971295577,
+        "R@10": 73.0799069045772
+      },
+      "tamil_to_english": {
+        "R@1": 43.83242823894492,
+        "R@5": 65.08921644685803,
+        "R@10": 73.15748642358417
+      },
+      "telugu_to_english": {
+        "R@1": 46.39255236617533,
+        "R@5": 65.70985259891388,
+        "R@10": 73.15748642358417
+      },
+      "chinese_to_english": {
+        "R@1": 47.478665632273085,
+        "R@5": 65.70985259891388,
+        "R@10": 72.14895267649341
+      }
+    },
+    "macro_average": {
+      "R@1": 46.464164229874086,
+      "R@5": 65.81130273915379,
+      "R@10": 73.00829504087844
+    }
+  },
+  "clip_baseline": {
+    "mode": "global_query_vs_global_image",
+    "per_query_set": {
+      "english_query": {
+        "R@1": 27.075252133436774,
+        "R@5": 45.53917765709853,
+        "R@10": 55.54693560899923
+      },
+      "assamese_to_english": {
+        "R@1": 23.584173778122576,
+        "R@5": 41.81536074476338,
+        "R@10": 51.82311869666408
+      },
+      "bengali_to_english": {
+        "R@1": 24.204809930178435,
+        "R@5": 42.43599689681924,
+        "R@10": 51.04732350659425
+      },
+      "gujarati_to_english": {
+        "R@1": 24.51512800620636,
+        "R@5": 43.0566330488751,
+        "R@10": 52.75407292474787
+      },
+      "hindi_to_english": {
+        "R@1": 24.90302560124127,
+        "R@5": 43.21179208688906,
+        "R@10": 52.28859581070597
+      },
+      "kannada_to_english": {
+        "R@1": 24.282389449185416,
+        "R@5": 42.97905352986812,
+        "R@10": 52.21101629169899
+      },
+      "malayalam_to_english": {
+        "R@1": 25.368502715283164,
+        "R@5": 43.987587276958884,
+        "R@10": 51.978277734678045
+      },
+      "marathi_to_english": {
+        "R@1": 23.584173778122576,
+        "R@5": 41.19472459270753,
+        "R@10": 49.5733126454616
+      },
+      "odia_to_english": {
+        "R@1": 24.980605120248253,
+        "R@5": 41.89294026377037,
+        "R@10": 51.59038013964313
+      },
+      "punjabi_to_english": {
+        "R@1": 24.43754848719938,
+        "R@5": 42.203258339798296,
+        "R@10": 52.05585725368502
+      },
+      "tamil_to_english": {
+        "R@1": 23.894491854150505,
+        "R@5": 41.81536074476338,
+        "R@10": 51.04732350659425
+      },
+      "telugu_to_english": {
+        "R@1": 24.51512800620636,
+        "R@5": 43.21179208688906,
+        "R@10": 51.280062063615205
+      },
+      "chinese_to_english": {
+        "R@1": 24.980605120248253,
+        "R@5": 42.97905352986812,
+        "R@10": 52.21101629169899
+      }
+    },
+    "macro_average": {
+      "R@1": 24.640448767679175,
+      "R@5": 42.794056215313006,
+      "R@10": 51.95440711344513
+    }
+  },
+  "settings": {
+    "ocr_variant": "recognized",
+    "ocr_max_lines": 40,
+    "null_visual_ablation": false,
+    "precision": "float32",
+    "device": "cuda:0",
+    "tie_policy": "stable_gallery_order",
+    "tf32": {
+      "cuda_matmul_allow_tf32": false,
+      "cudnn_allow_tf32": false,
+      "float32_matmul_precision": "highest"
+    },
+    "torch_num_threads": 8,
+    "query_chunk": 32,
+    "gallery_chunk": 128,
+    "bank_batch": 256,
+    "recall_ks": [
+      1,
+      5,
+      10
+    ],
+    "tau_mode": "stored_parameter",
+    "stored_tau": 33.33333206176758
+  },
+  "checkpoint": {
+    "path": "<features_root>/checkpoints_colbert_XSTAR_5/best.pt",
+    "sha256": "b702d7eb1017771ed3aa67120cbed39d5900fa6192da3244b469ea57680977b8",
+    "size_bytes": 555595979,
+    "epoch": 9,
+    "config": {
+      "D": 512,
+      "H": 4,
+      "FFN_MULT": 2,
+      "L": 11,
+      "K": 40,
+      "BATCH_SIZE": 32,
+      "LR": 0.0001,
+      "WD": 0.0001,
+      "DROP": 0.2,
+      "EPOCHS": 30,
+      "WARMUP_STEPS": 500,
+      "MAX_CHUNK_B": 64
+    },
+    "metrics": {
+      "train_loss": 0.49519209796232533,
+      "val_loss": 1.0419012781321293
+    }
+  },
+  "inputs": {
+    "manifest": "<dataset_root>/XSTAR_final_manifest2.json",
+    "manifest_sha256": "f6e594ac5d0eb470c5ff32bbc4637c5831c1cf2727e9227e2f023cde457d26a2",
+    "split_list": "<features_root>/image_filenames_test.txt",
+    "split_list_sha256": "125cf37abc8897db8e4da030ea18c7a5dd1225e88556ca84c318bfca7c503c36",
+    "image_tokens": "<features_root>/test_image_tokens_postxfmr_vitb32.npy",
+    "image_global": "<features_root>/test_image_global_embeddings.npy",
+    "ocr_dir": "<features_root>/ocr_test_vitb32_lines",
+    "query_sets": {
+      "english_query": {
+        "packed_ids": "<features_root>/colbert_packed2/test_q_ids.txt",
+        "packed_ids_sha256": "3862fc73738700fb8ca5279eaf8154f526ffbffe724c0c7ff66ac3d3f6ea7ba2",
+        "global_queries": "<features_root>/english_query_vitb32_2/test_english_query_vitb32.npy",
+        "global_ids_sha256": "3862fc73738700fb8ca5279eaf8154f526ffbffe724c0c7ff66ac3d3f6ea7ba2"
+      },
+      "assamese_to_english": {
+        "packed_ids": "<features_root>/colbert_packed2/test_q_ids__assamese_to_english.txt",
+        "packed_ids_sha256": "3862fc73738700fb8ca5279eaf8154f526ffbffe724c0c7ff66ac3d3f6ea7ba2",
+        "global_queries": "<features_root>/to_english_vitb32_2/test_assamese_to_english_vitb32.npy",
+        "global_ids_sha256": "3862fc73738700fb8ca5279eaf8154f526ffbffe724c0c7ff66ac3d3f6ea7ba2"
+      },
+      "bengali_to_english": {
+        "packed_ids": "<features_root>/colbert_packed2/test_q_ids__bengali_to_english.txt",
+        "packed_ids_sha256": "3862fc73738700fb8ca5279eaf8154f526ffbffe724c0c7ff66ac3d3f6ea7ba2",
+        "global_queries": "<features_root>/to_english_vitb32_2/test_bengali_to_english_vitb32.npy",
+        "global_ids_sha256": "3862fc73738700fb8ca5279eaf8154f526ffbffe724c0c7ff66ac3d3f6ea7ba2"
+      },
+      "gujarati_to_english": {
+        "packed_ids": "<features_root>/colbert_packed2/test_q_ids__gujarati_to_english.txt",
+        "packed_ids_sha256": "3862fc73738700fb8ca5279eaf8154f526ffbffe724c0c7ff66ac3d3f6ea7ba2",
+        "global_queries": "<features_root>/to_english_vitb32_2/test_gujarati_to_english_vitb32.npy",
+        "global_ids_sha256": "3862fc73738700fb8ca5279eaf8154f526ffbffe724c0c7ff66ac3d3f6ea7ba2"
+      },
+      "hindi_to_english": {
+        "packed_ids": "<features_root>/colbert_packed2/test_q_ids__hindi_to_english.txt",
+        "packed_ids_sha256": "3862fc73738700fb8ca5279eaf8154f526ffbffe724c0c7ff66ac3d3f6ea7ba2",
+        "global_queries": "<features_root>/to_english_vitb32_2/test_hindi_to_english_vitb32.npy",
+        "global_ids_sha256": "3862fc73738700fb8ca5279eaf8154f526ffbffe724c0c7ff66ac3d3f6ea7ba2"
+      },
+      "kannada_to_english": {
+        "packed_ids": "<features_root>/colbert_packed2/test_q_ids__kannada_to_english.txt",
+        "packed_ids_sha256": "3862fc73738700fb8ca5279eaf8154f526ffbffe724c0c7ff66ac3d3f6ea7ba2",
+        "global_queries": "<features_root>/to_english_vitb32_2/test_kannada_to_english_vitb32.npy",
+        "global_ids_sha256": "3862fc73738700fb8ca5279eaf8154f526ffbffe724c0c7ff66ac3d3f6ea7ba2"
+      },
+      "malayalam_to_english": {
+        "packed_ids": "<features_root>/colbert_packed2/test_q_ids__malayalam_to_english.txt",
+        "packed_ids_sha256": "3862fc73738700fb8ca5279eaf8154f526ffbffe724c0c7ff66ac3d3f6ea7ba2",
+        "global_queries": "<features_root>/to_english_vitb32_2/test_malayalam_to_english_vitb32.npy",
+        "global_ids_sha256": "3862fc73738700fb8ca5279eaf8154f526ffbffe724c0c7ff66ac3d3f6ea7ba2"
+      },
+      "marathi_to_english": {
+        "packed_ids": "<features_root>/colbert_packed2/test_q_ids__marathi_to_english.txt",
+        "packed_ids_sha256": "3862fc73738700fb8ca5279eaf8154f526ffbffe724c0c7ff66ac3d3f6ea7ba2",
+        "global_queries": "<features_root>/to_english_vitb32_2/test_marathi_to_english_vitb32.npy",
+        "global_ids_sha256": "3862fc73738700fb8ca5279eaf8154f526ffbffe724c0c7ff66ac3d3f6ea7ba2"
+      },
+      "odia_to_english": {
+        "packed_ids": "<features_root>/colbert_packed2/test_q_ids__odia_to_english.txt",
+        "packed_ids_sha256": "3862fc73738700fb8ca5279eaf8154f526ffbffe724c0c7ff66ac3d3f6ea7ba2",
+        "global_queries": "<features_root>/to_english_vitb32_2/test_odia_to_english_vitb32.npy",
+        "global_ids_sha256": "3862fc73738700fb8ca5279eaf8154f526ffbffe724c0c7ff66ac3d3f6ea7ba2"
+      },
+      "punjabi_to_english": {
+        "packed_ids": "<features_root>/colbert_packed2/test_q_ids__punjabi_to_english.txt",
+        "packed_ids_sha256": "3862fc73738700fb8ca5279eaf8154f526ffbffe724c0c7ff66ac3d3f6ea7ba2",
+        "global_queries": "<features_root>/to_english_vitb32_2/test_punjabi_to_english_vitb32.npy",
+        "global_ids_sha256": "3862fc73738700fb8ca5279eaf8154f526ffbffe724c0c7ff66ac3d3f6ea7ba2"
+      },
+      "tamil_to_english": {
+        "packed_ids": "<features_root>/colbert_packed2/test_q_ids__tamil_to_english.txt",
+        "packed_ids_sha256": "3862fc73738700fb8ca5279eaf8154f526ffbffe724c0c7ff66ac3d3f6ea7ba2",
+        "global_queries": "<features_root>/to_english_vitb32_2/test_tamil_to_english_vitb32.npy",
+        "global_ids_sha256": "3862fc73738700fb8ca5279eaf8154f526ffbffe724c0c7ff66ac3d3f6ea7ba2"
+      },
+      "telugu_to_english": {
+        "packed_ids": "<features_root>/colbert_packed2/test_q_ids__telugu_to_english.txt",
+        "packed_ids_sha256": "3862fc73738700fb8ca5279eaf8154f526ffbffe724c0c7ff66ac3d3f6ea7ba2",
+        "global_queries": "<features_root>/to_english_vitb32_2/test_telugu_to_english_vitb32.npy",
+        "global_ids_sha256": "3862fc73738700fb8ca5279eaf8154f526ffbffe724c0c7ff66ac3d3f6ea7ba2"
+      },
+      "chinese_to_english": {
+        "packed_ids": "<features_root>/colbert_packed2/test_q_ids__chinese_to_english.txt",
+        "packed_ids_sha256": "3862fc73738700fb8ca5279eaf8154f526ffbffe724c0c7ff66ac3d3f6ea7ba2",
+        "global_queries": "<features_root>/to_english_vitb32_2/test_chinese_to_english_vitb32.npy",
+        "global_ids_sha256": "3862fc73738700fb8ca5279eaf8154f526ffbffe724c0c7ff66ac3d3f6ea7ba2"
+      }
+    }
+  },
+  "environment": {
+    "python": "3.10.19",
+    "numpy": "2.2.6",
+    "torch": "2.4.1+cu121",
+    "cuda_available": true,
+    "executable": "<repo>/.venv/bin/python",
+    "clip": "1.0",
+    "xstar": "0.1.0.dev0",
+    "git": {
+      "commit": "81b6d5a00b544d4cb23e59f2e409ee1af5857342",
+      "dirty": false
+    }
+  },
+  "sanitization": {
+    "source": "raw result file written by scripts/evaluate.py, kept locally under the ignored runs/ directory",
+    "raw_file_name": "main_checkpoint_cached_features__ckpt-b702d7eb1017__test__complete__eval.json",
+    "raw_file_sha256": "2fd06ea148c89a1e952a6efa1d3f6bd185f06461471e26738a2c5ce47b8cf4db",
+    "changes": [
+      "machine-specific path prefixes replaced by <features_root>, <dataset_root> and <repo>",
+      "environment.platform removed (host kernel string)"
+    ],
+    "fields_with_replaced_paths": [
+      "checkpoint.path",
+      "environment.executable",
+      "inputs.image_global",
+      "inputs.image_tokens",
+      "inputs.manifest",
+      "inputs.ocr_dir",
+      "inputs.query_sets.assamese_to_english.global_queries",
+      "inputs.query_sets.assamese_to_english.packed_ids",
+      "inputs.query_sets.bengali_to_english.global_queries",
+      "inputs.query_sets.bengali_to_english.packed_ids",
+      "inputs.query_sets.chinese_to_english.global_queries",
+      "inputs.query_sets.chinese_to_english.packed_ids",
+      "inputs.query_sets.english_query.global_queries",
+      "inputs.query_sets.english_query.packed_ids",
+      "inputs.query_sets.gujarati_to_english.global_queries",
+      "inputs.query_sets.gujarati_to_english.packed_ids",
+      "inputs.query_sets.hindi_to_english.global_queries",
+      "inputs.query_sets.hindi_to_english.packed_ids",
+      "inputs.query_sets.kannada_to_english.global_queries",
+      "inputs.query_sets.kannada_to_english.packed_ids",
+      "inputs.query_sets.malayalam_to_english.global_queries",
+      "inputs.query_sets.malayalam_to_english.packed_ids",
+      "inputs.query_sets.marathi_to_english.global_queries",
+      "inputs.query_sets.marathi_to_english.packed_ids",
+      "inputs.query_sets.odia_to_english.global_queries",
+      "inputs.query_sets.odia_to_english.packed_ids",
+      "inputs.query_sets.punjabi_to_english.global_queries",
+      "inputs.query_sets.punjabi_to_english.packed_ids",
+      "inputs.query_sets.tamil_to_english.global_queries",
+      "inputs.query_sets.tamil_to_english.packed_ids",
+      "inputs.query_sets.telugu_to_english.global_queries",
+      "inputs.query_sets.telugu_to_english.packed_ids",
+      "inputs.split_list",
+      "paths_config"
+    ],
+    "numeric_values_identical_to_raw": true
+  }
+}

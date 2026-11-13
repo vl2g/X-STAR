@@ -1,0 +1,97 @@
+# ---- Data: images and datasets (obtain from original providers) ----
+*.jpg
+*.jpeg
+*.png
+*.bmp
+*.gif
+*.tif
+*.tiff
+*.webp
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+data/
+datasets/
+XSTAR_dataset/
+RCTW-17/
+BharatSceneText/
+
+# ---- Feature caches and model weights ----
+*.npy
+*.npz
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.bin
+*.h5
+*.pkl
+*.pickle
+XSTAR_embeddings/
+features/
+checkpoints/
+
+# ---- Training / evaluation outputs ----
+runs/
+outputs/
+results/
+experiments/
+xstar_runs/
+wandb/
+lightning_logs/
+
+# ---- Local configuration, credentials and secrets ----
+configs/paths.yaml
+configs/*.local.yaml
+.env
+.env.*
+*.env
+*.pem
+*.key
+id_rsa*
+id_ed25519*
+*_ed25519
+*_ed25519.pub
+credentials*
+secrets*
+*.token
+
+# ---- SSH control sockets ----
+.ssh/
+*.sock
+*.socket
+cm-*
+ssh-*
+control-*
+
+# ---- Logs and temporary files ----
+*.log
+*.out
+*.pid
+*.tmp
+*.swp
+*~
+tmp/
+temp/
+.DS_Store
+
+# ---- Python and environments ----
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+env/
+.conda/
+.ipynb_checkpoints/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# ---- Raw audit exports (source dumps and full translated-OCR artifacts) ----
+*_sources.json
+*merged_translation_output*.json

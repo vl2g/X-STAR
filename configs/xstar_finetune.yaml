@@ -1,0 +1,53 @@
+# X-STAR fine-tuning stage of CoLITE-CLIP, main result (scripts/train.py --config).
+#
+# Values recovered from checkpoints_colbert_XSTAR_5/best.pt (read with
+# weights_only=True) and main-result notebook cell 1. The earlier notebook's
+# training cell uses different settings and is not the source for these values.
+
+stage: xstar_finetune
+
+data:
+  kind: xstar
+  train_split: train
+  val_split: val
+  query_set: english_query  # one packed English query per image (C = 1)
+  ocr_variant: recognized   # key under features.ocr.dirs; never mix with ground-truth OCR
+
+model:
+  dim: 512
+  heads: 4
+  layers: 11
+  ffn_mult: 2
+  dropout: 0.2
+  ocr_max_lines: 40         # K
+
+temperature:
+  # Recovered behaviour: the class initialises tau to 1/0.02 (requires_grad=False);
+  # loading the TextCaps checkpoint overwrites it with the stored 33.3333, and
+  # forward() returns that stored parameter (effective multiplier 33.3333 = 1/0.03).
+  # The class comment "fixed tau=1/0.07" does not describe the code.
+  mode: stored_parameter    # fixed | stored_parameter
+  fixed_multiplier: null
+  init_parameter: 50.0      # replaced by the initialisation checkpoint's stored value
+
+training:
+  init_checkpoint: textcaps_init   # key under 'checkpoints:' in the paths file
+  epochs: 30
+  batch_size: 32
+  lr: 1.0e-4
+  weight_decay: 1.0e-4
+  warmup_steps: 500
+  grad_clip_norm: 1.0
+  seed: 42                  # set in the source; not stored in its checkpoint config
+  normalize_queries: true   # the source re-normalised query tokens inside MaxSim
+  maxsim_chunk: 64          # MAX_CHUNK_B; memory/speed only
+  num_workers: 6
+  fused_adamw: false
+  allow_tf32: true          # the source enabled TF32 matmuls on CUDA
+  dataloader_timeout_s: 600 # max wait for one batch from DataLoader workers; operational, may change on resume
+
+# Recorded for reference (not read by the trainer):
+recovered_checkpoint:
+  best_epoch: 9
+  best_val_loss: 1.0419012781321293
+  selection: lowest validation loss

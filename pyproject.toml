@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "xstar"
+version = "0.1.0.dev0"
+description = "X-STAR cross-lingual scene text-aware image retrieval and the CoLITE-CLIP model"
+readme = "README.md"
+license = {file = "LICENSE"}
+requires-python = ">=3.10"
+dependencies = [
+    "numpy",
+    "torch",
+    "pyyaml",
+]
+
+[project.optional-dependencies]
+# Feature extraction needs the original OpenAI CLIP implementation and Pillow.
+# OpenAI CLIP is not published on PyPI; install it from its repository:
+#   pip install "git+https://github.com/openai/CLIP.git"
+features = [
+    "pillow",
+    "ftfy",
+    "regex",
+]
+test = [
+    "pytest",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = [
+    "research_data: needs local X-STAR research artifacts (set XSTAR_RESEARCH_ROOT)",
+    "worker_processes: needs DataLoader worker processes; reports UNVERIFIED where the environment blocks them",
+]

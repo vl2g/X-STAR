@@ -1,0 +1,51 @@
+# TextCaps pre-training stage of CoLITE-CLIP (scripts/train.py --config).
+#
+# Values recovered from the TextCaps checkpoint metadata (best.pt, read with
+# weights_only=True) and the server-40 source ColBERT_style_new_13(main).ipynb,
+# cell 2. Training runs on existing TextCaps feature files (see the 'textcaps'
+# section of configs/paths.example.yaml); raw TextCaps preparation is not
+# implemented.
+
+stage: textcaps_pretrain
+
+data:
+  kind: textcaps            # 5 reference captions per image from caption shards
+
+model:
+  dim: 512                  # D
+  heads: 4                  # H
+  layers: 11                # L (fusion blocks)
+  ffn_mult: 2               # FFN_MULT
+  dropout: 0.1              # DROP
+  ocr_max_lines: 30         # K: first 30 OCR lines; padding filled by the learned null_O token.
+                            # The checkpoint directory name contains "k46"; that is not K.
+
+temperature:
+  # Recovered behaviour: the tau parameter is initialised to 1/0.03 and stored
+  # (33.3333), but learn_tau is False, so forward() returns a fixed 1/0.02 = 50.
+  # The paper draft states tau = 0.02 for this stage.
+  mode: fixed               # fixed | stored_parameter
+  fixed_multiplier: 50.0
+  init_parameter: 33.333333333333336   # 1/0.03, the value stored in the checkpoint
+
+training:
+  init_checkpoint: null     # trained from random initialisation
+  epochs: 40
+  batch_size: 20
+  lr: 1.0e-3
+  weight_decay: 1.0e-3
+  warmup_steps: 5000        # linear warm-up, then cosine decay per step
+  grad_clip_norm: 1.0
+  seed: 42
+  normalize_queries: false  # caption tokens used as stored (already L2-normalised)
+  maxsim_chunk: 20          # MAX_CHUNK_B; memory/speed only
+  num_workers: 8
+  fused_adamw: true         # used when available on CUDA, as in the source
+  allow_tf32: true          # the source enabled TF32 matmuls on CUDA
+  dataloader_timeout_s: 600 # max wait for one batch from DataLoader workers; operational, may change on resume
+
+# Recorded for reference (not read by the trainer):
+recovered_checkpoint:
+  best_epoch: 38
+  best_val_loss: 0.20465701818466187
+  caption_mode: all_avg     # loss averaged over the 5 captions (train and val)

@@ -1,0 +1,72 @@
+# Path configuration read by scripts/validate_dataset.py, train.py, evaluate.py
+# and retrieve.py (option --paths).
+#
+# Copy to configs/paths.yaml (ignored by git) and edit. Every location is
+# explicit; the scripts do not guess or fall back to other paths. Outputs are
+# refused if they overlap any input below. Never put credentials here.
+
+dataset:
+  # Folder holding the image folders (A ... L, N); used for image checks.
+  root: /path/to/XSTAR_dataset
+  manifest: /path/to/XSTAR_dataset/XSTAR_final_manifest2.json
+  # Ordered image lists (one relative filename per line). They define the
+  # split and the row order of every per-split feature array. For X-STAR each
+  # list equals the sorted filenames of that split in the manifest.
+  split_lists:
+    train: /path/to/XSTAR_embeddings/image_filenames_train.txt
+    val: /path/to/XSTAR_embeddings/image_filenames_val.txt
+    test: /path/to/XSTAR_embeddings/image_filenames_test.txt
+
+# Precomputed CLIP ViT-B/32 feature cache. Names match the original cache and
+# the outputs of the extraction scripts.
+features:
+  root: /path/to/XSTAR_embeddings
+  image_tokens: "{split}_image_tokens_postxfmr_vitb32.npy"     # [N, 50, 512]
+  image_global: "{split}_image_global_embeddings.npy"           # [N, 512], CLIP baseline (test)
+  query_tokens_dir: colbert_packed2                             # packed per-token queries, masks, IDs
+  query_global_english_dir: english_query_vitb32_2              # global English queries (baseline)
+  # Global back-translated queries for the CLIP baseline. Note the spelling
+  # "vitb32"; the original evaluator's "to_english_vitb3_2" does not exist.
+  query_global_to_english_dir: to_english_vitb32_2
+  ocr:
+    # Exactly one OCR variant per run. "recognized" is the primary input.
+    variant: recognized
+    dirs:
+      recognized: "ocr_{split}_vitb32_lines"
+      ground_truth: "gt_ocr_{split}_vitb32_lines"          # oracle-OCR experiment only
+      corrected: "ocr_corrected_{split}_vitb32_lines"      # separate experiment; provenance pending
+
+checkpoints:
+  # TextCaps pre-training result; initialisation for X-STAR fine-tuning.
+  # (Its research directory name contains "k46"; its OCR cap is K = 30.)
+  textcaps_init: /path/to/textcap/ROOT2_embeddings/checkpoints_colbert_vitb32_k46_no_distill/best.pt
+  # Main X-STAR result checkpoint (epoch 9).
+  xstar_main: /path/to/XSTAR_embeddings/checkpoints_colbert_XSTAR_5/best.pt
+
+# TextCaps feature files, needed only for scripts/train.py with
+# configs/textcaps_pretrain.yaml. Preparing these features from raw TextCaps
+# data is not implemented in this repository.
+textcaps:
+  image_tokens: /path/to/textcap/ROOT2_embeddings/train_image_tokens_postxfmr_vitb32.npy
+  image_list: /path/to/textcap/ROOT1_embeddings/image_filenames.txt
+  val_image_tokens: null          # validation images are rows of the same token pool
+  ocr_dirs:
+    train: /path/to/textcap/ROOT1_embeddings/ocr_train_vitb32
+    val: /path/to/textcap/ROOT1_embeddings/ocr_validation_vitb32
+  captions:                       # 5 captions per image, sharded per-token embeddings
+    train:
+      index: /path/to/textcap/ROOT2_embeddings/text_train_colbert_index.json
+      rowmap: /path/to/textcap/ROOT2_embeddings/text_train_colbert_rowmap.npz
+      ids: /path/to/textcap/ROOT2_embeddings/text_ref_ids_train_colbert.txt
+      shard_dir: null             # default: the index file's folder
+    val:
+      index: /path/to/textcap/ROOT2_embeddings/text_val_colbert_index.json
+      rowmap: /path/to/textcap/ROOT2_embeddings/text_val_colbert_rowmap.npz
+      ids: /path/to/textcap/ROOT2_embeddings/text_ref_ids_val_colbert.txt
+      shard_dir: null
+
+# Separately obtained source datasets (used by scripts/prepare_dataset.py via
+# its own options; listed here so outputs never overlap them).
+sources:
+  bstd_detection_root: /path/to/BharatSceneText/detection
+  rctw17_root: /path/to/RCTW-17
