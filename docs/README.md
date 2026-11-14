@@ -14,4 +14,4 @@
 
 Research data, feature caches and checkpoints are obtained separately. Local paths belong in `configs/paths.yaml`, which Git ignores.
 
-The project website is served from this folder, including its credited assets and `.nojekyll`. Run `python tools/check_project_page.py` from the repository root to check it.
+The project website is maintained in [vl2g/vl2g.github.io/projects/X-STAR](https://github.com/vl2g/vl2g.github.io/tree/master/projects/X-STAR). The HTML entry points here redirect to that page; the research documentation remains in this folder.
