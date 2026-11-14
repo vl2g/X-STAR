@@ -6,7 +6,7 @@
 <div align="center">
 
 [![Paper](https://img.shields.io/badge/Paper-Pending-B31B1B?style=flat-square)](docs/resources.md#paper)
-[![Project Page](https://img.shields.io/badge/Project-Page-6C63FF?style=flat-square)](https://vl2g.github.io/X-STAR/)
+[![Project Page](https://img.shields.io/badge/Project-Page-6C63FF?style=flat-square)](https://vl2g.github.io/projects/X-STAR/)
 [![Dataset](https://img.shields.io/badge/Dataset-Download-008C95?style=flat-square)](docs/resources.md#dataset)
 [![Weights](https://img.shields.io/badge/Weights-Download-DA7C18?style=flat-square)](docs/resources.md#checkpoints)
 [![Docs](https://img.shields.io/badge/Docs-Read%20now-007BFF?style=flat-square)](docs/README.md)
@@ -55,7 +55,7 @@ The split contains identical images across splits. Evaluation uses fixed gallery
 - [Dataset and preparation](dataset/README.md) — source images, query fields and feature formats.
 - [Method and benchmark](docs/method.md) — CoLITE-CLIP and all 13 query languages.
 - [Train, evaluate and retrieve](docs/usage.md) — commands and configuration.
-- [Project website](https://vl2g.github.io/X-STAR/) — method, results and retrieval examples.
+- [Project website](https://vl2g.github.io/projects/X-STAR/) — method, results and retrieval examples.
 - [Resources](docs/resources.md) — availability of paper, dataset and checkpoints.
 
 ## License and citation

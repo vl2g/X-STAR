@@ -6,7 +6,7 @@ Paper link and final publication metadata are forthcoming. Authors: **Dikshant S
 
 ## Project page
 
-[Project website](https://vl2g.github.io/X-STAR/) · [Website source](https://github.com/vl2g/X-STAR/tree/main/docs).
+[Project website](https://vl2g.github.io/projects/X-STAR/) · [Website source](https://github.com/vl2g/vl2g.github.io/tree/master/projects/X-STAR).
 
 ## Dataset
 

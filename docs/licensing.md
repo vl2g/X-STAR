@@ -14,7 +14,7 @@ Our annotation release is CC BY-SA 4.0 and retains source notices; the main mode
 
 We thank [AI4Bharat](https://ai4bharat.iitm.ac.in/) for [IndicTrans2](https://github.com/AI4Bharat/IndicTrans2), used for Indic-language translation during dataset preparation.
 
-[OpenAI CLIP](https://github.com/openai/CLIP), [IndicPhotoOCR](https://github.com/Bhashini-IITJ/IndicPhotoOCR), and the [ColBERT](https://github.com/stanford-futuredata/ColBERT) late-interaction design are acknowledged. Dependencies retain their own licenses; OpenAI CLIP is installed separately. The [project page's image credits](https://vl2g.github.io/X-STAR/image-credits.html) cover its selected photographs.
+[OpenAI CLIP](https://github.com/openai/CLIP), [IndicPhotoOCR](https://github.com/Bhashini-IITJ/IndicPhotoOCR), and the [ColBERT](https://github.com/stanford-futuredata/ColBERT) late-interaction design are acknowledged. Dependencies retain their own licenses; OpenAI CLIP is installed separately. The [project page's image credits](https://vl2g.github.io/projects/X-STAR/image-credits.html) cover its selected photographs.
 
 We acknowledge the **National Language Translation Mission ([Bhashini](https://bhashini.gov.in/))** for supporting this project at Indian Institute of Technology Jodhpur.
 
